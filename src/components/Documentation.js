@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, DollarSign, TrendingUp, Cpu, Cloud, Wrench, Calendar, Target, Zap, Download } from 'lucide-react';
+import { BookOpen, DollarSign, TrendingUp, Cpu, Calendar, Target, Zap, Download } from 'lucide-react';
 
 const Documentation = () => {
   return (

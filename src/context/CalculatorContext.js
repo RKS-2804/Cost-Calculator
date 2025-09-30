@@ -28,7 +28,6 @@ export const CalculatorProvider = ({ children }) => {
   });
 
   const [projectionMonths, setProjectionMonths] = useState(75);
-  const [forceRecalc, setForceRecalc] = useState(0);
   const [isCalculating, setIsCalculating] = useState(false);
 
   // Real-time calculation of costs
@@ -183,7 +182,6 @@ export const CalculatorProvider = ({ children }) => {
   const handleCalculate = () => {
     setIsCalculating(true);
     setTimeout(() => {
-      setForceRecalc(prev => prev + 1);
       setIsCalculating(false);
     }, 100); // Simulate calculation time
   };
