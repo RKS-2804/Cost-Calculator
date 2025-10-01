@@ -182,7 +182,6 @@ export const CalculatorProvider = ({ children }) => {
   const handleCalculate = () => {
     setIsCalculating(true);
     setTimeout(() => {
-      setForceRecalc(prev => prev + 1);
       setIsCalculating(false);
     }, 100); // Simulate calculation time
   };
