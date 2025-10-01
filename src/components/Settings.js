@@ -27,9 +27,9 @@ const Settings = () => {
     return true;
   };
 
-  const handleInputChangeWithValidation = (field, value) => {
-    if (validateInput(field, value)) {
-      handleInputChange(field, value);
+  const handleInputChangeWithValidation = (key, label, value) => {
+    if (validateInput(label, value)) {
+      handleInputChange(key, value);
     }
   };
 
@@ -128,7 +128,7 @@ const Settings = () => {
                     <input
                       type="number"
                       value={pricing.cameraUnitMin}
-                      onChange={(e) => handleInputChangeWithValidation('Camera Unit Min', e.target.value)}
+                      onChange={(e) => handleInputChangeWithValidation('cameraUnitMin', 'Camera Unit Min', e.target.value)}
                       onBlur={(e) => handleInputChange('cameraUnitMin', e.target.value)}
                       className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-sm font-semibold"
                     />
@@ -138,7 +138,7 @@ const Settings = () => {
                     <input
                       type="number"
                       value={pricing.cameraUnitMax}
-                      onChange={(e) => handleInputChangeWithValidation('Camera Unit Max', e.target.value)}
+                      onChange={(e) => handleInputChangeWithValidation('cameraUnitMax', 'Camera Unit Max', e.target.value)}
                       onBlur={(e) => handleInputChange('cameraUnitMax', e.target.value)}
                       className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-sm font-semibold"
                     />
@@ -158,7 +158,7 @@ const Settings = () => {
                     <input
                       type="number"
                       value={pricing.edgeDeviceUnitMin}
-                      onChange={(e) => handleInputChangeWithValidation('Edge Device Min', e.target.value)}
+                      onChange={(e) => handleInputChangeWithValidation('edgeDeviceUnitMin', 'Edge Device Min', e.target.value)}
                       onBlur={(e) => handleInputChange('edgeDeviceUnitMin', e.target.value)}
                       className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-corporate-blue focus:border-transparent text-sm font-semibold"
                     />
@@ -168,7 +168,7 @@ const Settings = () => {
                     <input
                       type="number"
                       value={pricing.edgeDeviceUnitMax}
-                      onChange={(e) => handleInputChangeWithValidation('Edge Device Max', e.target.value)}
+                      onChange={(e) => handleInputChangeWithValidation('edgeDeviceUnitMax', 'Edge Device Max', e.target.value)}
                       onBlur={(e) => handleInputChange('edgeDeviceUnitMax', e.target.value)}
                       className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-sm font-semibold"
                     />
@@ -185,7 +185,7 @@ const Settings = () => {
                 <input
                   type="number"
                   value={pricing.awsPerStore}
-                  onChange={(e) => handleInputChangeWithValidation('AWS Cost', e.target.value)}
+                  onChange={(e) => handleInputChangeWithValidation('awsPerStore', 'AWS Cost', e.target.value)}
                   onBlur={(e) => handleInputChange('awsPerStore', e.target.value)}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-lg font-semibold"
                 />
@@ -201,7 +201,7 @@ const Settings = () => {
                   type="number"
                   step="0.1"
                   value={pricing.maintenanceRate}
-                  onChange={(e) => handleInputChangeWithValidation('Maintenance Rate', e.target.value)}
+                  onChange={(e) => handleInputChangeWithValidation('maintenanceRate', 'Maintenance Rate', e.target.value)}
                   onBlur={(e) => handleInputChange('maintenanceRate', e.target.value)}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-lg font-semibold"
                 />
@@ -216,7 +216,7 @@ const Settings = () => {
                 <input
                   type="number"
                   value={pricing.camerasPerStore}
-                  onChange={(e) => handleInputChangeWithValidation('Cameras per Store', e.target.value)}
+                  onChange={(e) => handleInputChangeWithValidation('camerasPerStore', 'Cameras per Store', e.target.value)}
                   onBlur={(e) => handleInputChange('camerasPerStore', e.target.value)}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-lg font-semibold"
                 />
@@ -234,7 +234,7 @@ const Settings = () => {
                     <input
                       type="number"
                       value={pricing.edgeDevicesPerStoreMin}
-                      onChange={(e) => handleInputChangeWithValidation('Edge Devices Min', e.target.value)}
+                      onChange={(e) => handleInputChangeWithValidation('edgeDevicesPerStoreMin', 'Edge Devices Min', e.target.value)}
                       onBlur={(e) => handleInputChange('edgeDevicesPerStoreMin', e.target.value)}
                       className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-sm font-semibold"
                     />
@@ -244,7 +244,7 @@ const Settings = () => {
                     <input
                       type="number"
                       value={pricing.edgeDevicesPerStoreMax}
-                      onChange={(e) => handleInputChangeWithValidation('Edge Devices Max', e.target.value)}
+                      onChange={(e) => handleInputChangeWithValidation('edgeDevicesPerStoreMax', 'Edge Devices Max', e.target.value)}
                       onBlur={(e) => handleInputChange('edgeDevicesPerStoreMax', e.target.value)}
                       className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-sm font-semibold"
                     />
@@ -261,7 +261,7 @@ const Settings = () => {
                 <input
                   type="number"
                   value={pricing.phase0AWS}
-                  onChange={(e) => handleInputChangeWithValidation('Phase-0 AWS', e.target.value)}
+                  onChange={(e) => handleInputChangeWithValidation('phase0AWS', 'Phase-0 AWS', e.target.value)}
                   onBlur={(e) => handleInputChange('phase0AWS', e.target.value)}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-lg font-semibold"
                 />
@@ -276,7 +276,7 @@ const Settings = () => {
                 <input
                   type="number"
                   value={pricing.storesPerMonth}
-                  onChange={(e) => handleInputChangeWithValidation('Stores per Month', e.target.value)}
+                  onChange={(e) => handleInputChangeWithValidation('storesPerMonth', 'Stores per Month', e.target.value)}
                   onBlur={(e) => handleInputChange('storesPerMonth', e.target.value)}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-vebuiln-primary focus:border-transparent text-lg font-semibold"
                 />
